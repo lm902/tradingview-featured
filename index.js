@@ -3,7 +3,7 @@ const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 
 exports.main_handler = async (event, context) => {
-  const timeStart = event && event.Time ? new Date(event.Time) - 360000 : new Date() - 360000
+  const timeStart = event && event.Time ? new Date(event.Time) - Number(process.env.TIME_OFFSET) : new Date() - Number(process.env.TIME_OFFSET)
   const pageRequest = await fetch('https://www.tradingview.com/markets/cryptocurrencies/ideas/main/?sort=recent&by=everyone&video=&route_range=1', {
     headers: {
       'x-requested-with': 'XMLHttpRequest'
