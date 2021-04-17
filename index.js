@@ -45,7 +45,7 @@ exports.main_handler = async (event, context) => {
       messages.push(`标题: ${article.title}
 货币符号: ${article.symbol}
 时间单位: ${article.timeframe}
-作者: ${article.author} (声望: ${article.authorReputation}, 发表数: ${article.authorChartsCount})
+作者: ${article.author} (声望: ${article.authorReputation}, 发表数: ${article.authorChartsCount}, 权重: ${Math.round(article.authorReputation / article.authorChartsCount)})
 发布时间: ${new Date(article.timestamp)}
 文章链接: ${article.url}`)
     }
