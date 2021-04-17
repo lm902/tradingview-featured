@@ -31,11 +31,11 @@ exports.main_handler = async (event, context) => {
       .then(x => x.json())
       .then(x => {
         article.authorReputation = x.reputation
-        article.authorChartsCount = x.charts_count
+        article.authorChartsCount = x.charts_count || 1
       })
       .catch(x => {
         article.authorReputation = 0
-        article.authorChartsCount = 0
+        article.authorChartsCount = 1
       }))
   }
   await Promise.all(authorRequests)
