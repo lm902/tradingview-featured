@@ -1,0 +1,19 @@
+{
+  "name": "tradingview-featured",
+  "version": "1.0.0",
+  "description": "Scraps TradingView ideas posted by high reputation authors and forward them to Telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lm902/tradingview-featured.git"
+  },
+  "author": "lm902",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lm902/tradingview-featured/issues"
+  },
+  "homepage": "https://github.com/lm902/tradingview-featured#readme"
+}
