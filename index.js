@@ -1,6 +1,8 @@
 const fetch = require('node-fetch')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
+const manifest = require('./package.json')
+const { version } = manifest
 
 exports.main_handler = async (event, context) => {
   const timeStart = event && event.Time ? new Date(event.Time) - Number(process.env.TIME_OFFSET) : new Date() - Number(process.env.TIME_OFFSET)
@@ -57,5 +59,5 @@ exports.main_handler = async (event, context) => {
       .catch(x => x))
   }
   const sendResults = await Promise.all(messageRequests)
-  return { articles, messages, sendResults }
+  return { event, articles, messages, sendResults, version }
 }
